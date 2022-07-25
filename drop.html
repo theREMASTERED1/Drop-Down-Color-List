@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Drop Down</title>
+    <script>
+        function favColor() {
+            var mylist = document.getElementById("myList");
+            var ColorChoice = (document.getElementById("color").style.color = mylist.options[mylist.selectedIndex].value);
+            var TextChoice = (document.getElementById("color").innerHTML = mylist.options[mylist.selectedIndex].value);
+            document.getElementById("color").style.fontSize = '30px';
+            document.getElementById("color").style.visibility = "visible";
+            console.log(ColorChoice)
+        }
+    </script>
+
+    <body>
+        <form>
+            <b> your favourite color is! </b>
+            <select id="myList" onChange="favColor()">  
+        <option> ---Choose Color--- </option>  
+        <option value="red"> red </option>  
+        <option value="blue"> blue </option>  
+        <option value="green"> green </option>  
+        <option value="purple"> purple </option>  
+        </select>
+            <p> Your selected Color is is:<br/>
+                <label id="color" style="font-size: 20; visibility:hidden;"></label> </p>
+        </form>
+    </body>
+
+</html>
